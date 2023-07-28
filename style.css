@@ -1,0 +1,27 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+#wrap {
+  text-align: center;
+  
+}
+
+#wrap-center{
+  width: 1280px;
+  /*  block의 특성을 없애 가운데 정렬하는 방법*/
+  display: inline-block;
+  /* margin: 0 auto; */
+  background-color: pink;
+}
+#header{
+
+}
+#hamberger{
+  width: 26px;
+  height: 26px;
+  background-color: red;
+}
+#main{
+  height: 2000px;
+}
