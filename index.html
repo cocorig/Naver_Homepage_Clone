@@ -12,17 +12,31 @@
   <div id="wrap">
     <!-- 가운데 정렬 -->
     <div id="wrap-center">
+      <!-- header -->
       <header id="header">
-        <button type="button" id="hamberger">
-
+        <button type="button" id="header-hamberger">
+          <!-- ::before -->
+          <div>
+            <span class="a11y-hidden">확장 영역</span>
+          </div>
+          <!-- ::after -->
         </button>
-        <a href="#" id="naver-pay">
-
+        <a href="#" id="header-pay" target="_blank">
+          <div>
+            <span class="a11y-hidden">네이버 페이</span>
+          </div>
         </a>
-        <button type="button" id="aram"></button>
+        <button type="button" id="header-notify">
+          <div>
+            <span class="a11y-hidden">알람</span>
+          </div>
+        </button>
       </header>
+      <!-- 검색창 -->
       <input type="search" name="" id="search">
+      <!-- nav -->
       <nav id="nav"></nav>
+      <!-- main -->
       <main id="main"></main>
     </div>
   </div>
