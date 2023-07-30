@@ -74,11 +74,17 @@ img {
 }
 h1,
 h2,
-h3 {
+h3,
+span,
+form {
   font: inherit;
 }
-html{
+html
+,body
+{
   font-size: 10.5px;
+  line-height: 10.5px;
+  font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
 }
 
 a {
@@ -113,7 +119,9 @@ li {
 /* 전체 화면 */
 #wrap {
   text-align: center;
-  
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
 }
 /* 가운데 정렬 */
 #wrap-center{
@@ -274,6 +282,7 @@ li {
   color: transparent;
 }
 #search-input:focus::placeholder{
+
   color:#e4e4e4;
 
 }
@@ -340,9 +349,104 @@ li {
   height: 25px;
   background-position: -364px -159px;
 }
+/* nav 바 */
+
+#nav {
+  margin-top: 12px;
+}
+
+#nav > ul{
+  display: flex;
+  justify-content: center;
+  font-size: 1.4rem;
+  line-height: 20px;
+}
+#nav > ul li{
+  width: 64px;
+  /* 기본적으로는 높이 값은 고정해서 주지말자! 자식콘텐츠에 맞게 알아서 조절된다 */
+  /* height: 75px; */
+  margin-left:4px;
+  position: relative;
+}
+#nav > ul li a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+
+}
+#nav > ul li:nth-of-type(1){
+  /* 첫번 째 li만 적용x */
+  margin-left:0;
+}
+#nav > ul li a::before,
+#nav > ul li button::before{
+  content: ' ';
+  display: block;
+  background-image:url(./img-sp.png);
+  background-size: 424px 409px;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+  margin: 2px;
+}
+#nav > ul li a::after,
+#nav > ul li button::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: 5px;
+  background-image:url(./img-sp.png);
+  background-size: 424px 409px;
+  background-position: 0px -128px;
+  background-repeat: no-repeat;
+  width: 54px;
+  height: 54px;
+  z-index: -1;
+}
 
 
+
+#nav .nav-btn{
+  height: 48px;
+}
+.nav-mail::before{
+  background-position: -250px -90px;
+}
+.nav-cafe::before{
+  background-position: -250px 0px;
+}
+.nav-blog::before{
+  background-position: -201px -98px;
+}
+.nav-shopping::before{
+  background-position: -90px -209px;
+}
+.nav-news::before{
+  background-position: 0px -209px;
+}
+.nav-stock::before{
+  background-position: -180px -209px
+}
+.nav-resl::before{
+  background-position: -45px -209px;
+}
+#nav > ul li .nav-map::before{
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  background-position: -201px 0px;
+
+}
+.nav-webton::before{
+  background-position: -225px -209px;
+}
+#nav > ul li button::before{
+  background-position: -250px -136px;
+
+}
 /* 메인 페이지 */
 #main{
-  height: 2000px;
+
 }
