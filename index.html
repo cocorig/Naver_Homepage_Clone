@@ -33,7 +33,27 @@
         </button>
       </header>
       <!-- 검색창 -->
-      <input type="search" name="" id="search">
+      <div id="search">
+        <form action="">
+          <a href="" id="search-svg">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"></path></svg>
+
+          </a>
+          <label for="search-input" class="a11y-hidden">검색어 입력</label>
+          <input type="text" name="" id="search-input" placeholder="검색어를 입력해 주세요.">
+          <div id="search-right">
+            <button class="search-keyboard">
+              <span class="a11y-hidden">입력도구</span>
+            </button>
+            <button class="search-recent">
+              <span class="a11y-hidden">자동왼성/최근검색어펼치기</span>
+            </button>
+            <button class="search-btn">
+              <span  class="a11y-hidden">검색</span></div>
+            </button>
+          </div>
+        </form>
+      </div>
       <!-- nav -->
       <nav id="nav"></nav>
       <!-- main -->
