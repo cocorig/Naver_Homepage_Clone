@@ -91,7 +91,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
+a:visited{
+  color: inherit;
+}
 button {
   font: inherit;
   border: 0;
@@ -447,6 +449,190 @@ li {
 
 }
 /* 메인 페이지 */
+
 #main{
+  display: flex;
+  margin-top: 51px;
+  height: 2000px;
+  gap: 30px;
+}
+
+.main-left{
+  width: 830px;
 
 }
+.main-right{
+  width: 420px;
+
+}
+/* 공통인 부분 찾기 -> 같이 묶어서 구현 */
+section[class^=main]{
+  box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0,0,0,.04);
+  border-radius: 8px;
+  margin-bottom: 16px;
+} 
+/* ad로 끝나는 클래스 */
+aside[class$= ad] {
+  background-color: gray;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.main-left-ad{
+  
+  height: 130px;
+}
+
+.main-right-ad{
+  height: 240px;
+}
+
+/*  */
+
+.main-newstand{
+  height: 426px;
+
+ 
+}
+.main-shopping{
+
+  height: 560px;
+  
+}
+
+/* 로그인 폼 */
+.main-login{
+  height: 164px;
+  padding: 21px 20px 18px;
+  /* text한 줄 높이 -> 콘텐츠의 높이가 된다 */
+  line-height: 20px;
+  /* text간의 간격 조정 */
+  letter-spacing: -0.4px;
+}
+.main-login-title{
+  font-size: 1.4rem;
+  margin-bottom: 13px;
+}
+.main-login-btn{
+  height: 56px;
+  display: block;
+  background-color: #03c75a;
+  padding: 17px 0;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1.4rem;
+}
+.main-login-btn i{
+  background: url(./img-sp.png) -120px -166px /424px 409px no-repeat;
+  width: 72px;
+  height: 14px;
+  display: inline-block;
+  margin: 3px 8px 0 0;
+  /* 로그인 옆에 text가 움직임 */
+  vertical-align: -1px;
+}
+.main-login-list{
+  font-size: 1.3rem;
+  color: #606060;
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+.main-login-list li{
+  display: flex;
+  align-items: center;
+
+}
+.main-login-list li a{
+  display: inline-block;
+}
+.main-login-list li a:hover{
+  text-decoration: underline;
+}
+.main-login-list li:nth-of-type(2)::before,
+.main-login-list li:nth-of-type(2)::after
+{
+  content: '  ';
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background-color: var(--color_dot_divider);
+  margin: 4px 12px 0;
+  
+}
+.main-weather-stock{
+  padding: 0 18px;
+}
+.main-weather-stock header{
+  padding: 6px 0;
+  height: 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-weather-stock header div{
+  display: flex;
+  align-items: center;
+}
+.main-weather-stock header span{
+  color: var(--color_caption2);
+  font-size: 1.3rem;
+}
+.main-weather-stock-title{
+  vertical-align: top;
+  font-size: 1.5rem;
+  font-weight: 800;  
+  padding-right: 7px;
+}
+.main-weather-stock-title:hover{
+  text-decoration: underline;
+}
+.main-weather-desc{
+  position: relative;
+  border: 1px solid var(--color_border_in_divider);
+  border-radius: 15px;
+  font-size: 1.1rem;
+  line-height: 25px;
+  padding: 0 10px 0 7px;
+}
+.main-weather-desc::before{
+  content: ' ';
+  display: inline-block;
+  vertical-align:  top;
+  width: 12px;
+  height: 12px;
+  background: url(./img-sp.png)  -412px 0px /  424px 409px no-repeat;
+  margin-right: 2px;
+  margin-top: 6px;
+}
+
+.main-stock-plus{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  left: -3px;
+}
+.main-stock-plus::before{
+  content: ' ';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 3px;
+  left: 3px;
+  background: url(./img-sp.png)  -347px -316px /  424px 409px no-repeat;
+}
+#main-weather{
+  height: 236px;
+
+}
+#main-stock{
+  height: 236px;
+
+}
+
+
+.main-weather-stock-content{
+border-top: 1px solid var(--color_border_in);
+}
+
