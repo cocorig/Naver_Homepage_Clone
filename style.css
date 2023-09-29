@@ -79,6 +79,7 @@ span,
 form {
   font: inherit;
 }
+
 html
 ,body
 {
@@ -128,7 +129,7 @@ li {
 /* 가운데 정렬 */
 #wrap-center{
   width: 1280px;
-  /*  block의 특성을 없애 가운데 정렬하는 방법inline-block로 컨텐츠 크기만큼 차지
+  /*  block의 특성을 없애 가운데 정렬하는 방법 inline-block로 컨텐츠 크기만큼 차지
   display: inline-block;*/
   margin: 0 auto;
 
@@ -561,6 +562,7 @@ aside[class$= ad] {
   margin: 4px 12px 0;
   
 }
+/* 뉴스,증권 */
 .main-weather-stock{
   padding: 0 18px;
 }
@@ -622,17 +624,220 @@ aside[class$= ad] {
   left: 3px;
   background: url(./img-sp.png)  -347px -316px /  424px 409px no-repeat;
 }
+/* 날씨 */
 #main-weather{
   height: 236px;
 
 }
+/* 증권 */
 #main-stock{
   height: 236px;
 
 }
 
-
 .main-weather-stock-content{
 border-top: 1px solid var(--color_border_in);
 }
 
+/* 뉴스스탠드 */
+.main-newstand{
+  display: flex;
+  flex-flow: column;
+  height: 420px;
+}
+#main-newstand-top{
+  /* 최대한 영역을 차지함 */
+  flex: 1;
+  padding: 18px 20px 0px 20px;;
+}
+#main-newstand-top .dot,
+#main-newstand-top .slash{
+  padding-left: 26px;
+  position: relative;
+}
+#main-newstand-top .dot::before{
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  top:50%;
+  left: 13px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: var(--color_dot_divider);
+
+}
+#main-newstand-top .slash::before{
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 13px;
+  width: 1px;
+  height: 15px;
+  background-color: var(--color_dot_divider);
+  transform: skewX(-15deg);
+}
+
+
+
+
+.main-newstand a:hover,
+.main-shopping a:hover{
+  text-decoration: underline;
+}
+
+.main-newstand-shopping-header{
+
+  /*  */
+  line-height: 23px;
+}
+.main-newstand-header-title{
+  font-size: 1.6rem;
+  color: rgba(8,8,8,.5);
+  display: flex;
+  /* 왼쪽 정렬 */
+  justify-content: flex-start;
+  /* line-height는 px붙혀야 함 */
+  line-height: 23px;
+  margin-bottom: 17px;
+}
+
+
+
+/* 공통 폰트 볼드 */
+.bold{
+  color: var(--color_title);
+  font-weight: 800;
+}
+#main-newstand-shopping-gray{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  height: 50px;
+  margin-bottom:  18px;
+  padding: 12px 20px;
+  background-color: var(--color_option_bg);
+  border-radius: 4px;
+}
+
+#main-newstand-shopping-gray .left{
+  display: flex;
+}
+
+/* 전체 언론사 부분 */
+#main-newstand-shopping-gray .left > a:first-of-type{
+  width: 85px;
+  position: relative;
+
+}
+#main-newstand-shopping-gray .left > a:first-of-type i {
+  margin-left: 5px;
+  vertical-align: 2px;
+}
+#main-newstand-animation {
+  display: flex;
+  align-items: center;
+}
+
+/*  뉴스타이틀  */
+#main-newstand-animation a:first-of-type{
+  padding-left: 20px;
+  position: relative;
+
+}
+
+/* 뉴스타이틀 앞에 선 */
+#main-newstand-animation a:first-of-type::before{
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 1px;
+  height: 15px;
+  background-color: var(--color_dot_divider);
+}
+
+/* 뉴스 한줄 말 줄임 */
+#main-newstand-animation .newstand-desc{
+  display: inline-block;
+  width: 430px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-left: 11px;
+  position: relative;
+}
+/*  뉴스타이틀 뒤에 점 */
+#main-newstand-animation .newstand-desc::before{
+  content : '';
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  background-color: var(--color_dot_divider);
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+/* 뉴스 그레이 오른쪽 부분 */
+#main-newstand-shopping-gray .right{
+display: flex;
+}
+
+#main-newstand-shopping-gray .right .stend{
+  padding-right: 25px;
+  position: relative;
+}
+#main-newstand-shopping-gray .right .stend::before{
+  content: '';
+  position: absolute;
+  top: 4px;
+  right: 12px;
+  width: 1px;
+  height: 15px;
+  background-color: var(--color_dot_divider);
+}
+
+.main-newstand-grid{
+  /* 격자모양 일 때 grid사용 */
+  display: grid;
+  /* 사이즈를 지정해줘야 함 */
+  width: 790px;
+  height: 244px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat( 4 , 1fr);
+  font-size: 1.4rem;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 18px 0px;
+  /* border -  안쪽 border와 바깥쪽 border이 안겹치게 gird-gap으로 1px 주고 색으루 부여*/
+  grid-gap : 1px;
+  background-color: var(--color_border_in);
+}
+.main-newstand-grid div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 그 안쪽 자식에게  background를 white 주면 안쪽 선이 보임 */
+  background-color: white;
+}
+
+/* 뉴스스탠드 푸터 */
+.main-newstand-shopping-footer{
+  border-top: 1px solid var(--color_border_in);
+  padding: 10px 0 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-newstand-shopping-footer .list,
+.main-newstand-shopping-footer .grid{
+  position: absolute;
+  border: none;
+  cursor: pointer;
+}
+/* 쇼핑 */
