@@ -643,7 +643,7 @@ border-top: 1px solid var(--color_border_in);
 .main-newstand{
   display: flex;
   flex-flow: column;
-  height: 420px;
+  height: 450px;
 }
 #main-newstand-top{
   /* 최대한 영역을 차지함 */
@@ -677,9 +677,6 @@ border-top: 1px solid var(--color_border_in);
   background-color: var(--color_dot_divider);
   transform: skewX(-15deg);
 }
-
-
-
 
 .main-newstand a:hover,
 .main-shopping a:hover{
@@ -715,7 +712,6 @@ border-top: 1px solid var(--color_border_in);
   align-items: center;
   font-size: 1.4rem;
   height: 50px;
-  margin-bottom:  18px;
   padding: 12px 20px;
   background-color: var(--color_option_bg);
   border-radius: 4px;
@@ -832,12 +828,89 @@ display: flex;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  position: relative;
 }
+/* 이전 이후 버튼그룹 */
+.main-newstand-shopping-footer .btn-group{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 버튼 그룹안에 텍스트 */
+.main-newstand-shopping-footer .btn-group .news{
+  color: var(--color_news);
+}
+.main-newstand-shopping-footer .btn-group .total{
+  color: rgba(95,95,95,0.5)
+}
+.main-newstand-shopping-footer .text{
+  padding: 0 16px;
+}
+/* 이전 버튼 */
+.main-newstand-shopping-footer .btn-prev,
+.main-newstand-shopping-footer .btn-next{
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--color_button_border);
+  background-color: #fff;
+  border-radius: 50%;
+}
+.main-newstand-shopping-footer .btn-prev::before,
+.main-newstand-shopping-footer .btn-next::before{
+  content: '';
+  display: block;
+  position: absolute;
+  background: url(./img-sp.png);
+  background-size: 422px 405px;
+  background-position: -412px 0px;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 12px;
 
+}
+/* 다음 버튼 */
+.main-newstand-shopping-footer .btn-next{
+
+}
+/* 맨 왼쪽 버튼들 */
 .main-newstand-shopping-footer .list,
 .main-newstand-shopping-footer .grid{
   position: absolute;
   border: none;
   cursor: pointer;
+  top: 0;
+  background-color: transparent;
+  
 }
+/* 목록보기 버튼 */
+.main-newstand-shopping-footer .list{
+  right: 50px;
+  padding: 18px 9px 18px 20px;
+}
+.main-newstand-shopping-footer .list::before,
+.main-newstand-shopping-footer .grid::before{
+  content: '';
+  display: inline-block;
+  background : url(./img-sp.png);
+  background-size: 422px 406px;
+  background-position: -86px -368px;
+  background-repeat: no-repeat;
+  width: 21px;
+  height: 20px;
+}
+/* 격자보기 버튼 */
+.main-newstand-shopping-footer .grid::before{
+  background-position: -359px -368px;
+}
+
+.main-newstand-shopping-footer .grid{
+  right: 0;
+  padding: 18px 20px 18px 20px;
+}
+
+/* 뉴스 스탠드 끝 */
+
+
 /* 쇼핑 */
