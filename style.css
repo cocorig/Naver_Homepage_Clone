@@ -827,28 +827,32 @@ display: flex;
   padding: 10px 0 11px;
   display: flex;
   justify-content: center;
-  align-items: center;
   font-size: 1.3rem;
   font-weight: 600;
   position: relative;
 }
+
 /* 이전 이후 버튼그룹 */
 .main-newstand-shopping-footer .btn-group{
   display: flex;
-  justify-content: center;
   align-items: center;
 }
+
 /* 버튼 그룹안에 텍스트 */
 .main-newstand-shopping-footer .btn-group .news{
   color: var(--color_news);
 }
+
 .main-newstand-shopping-footer .btn-group .total{
   color: rgba(95,95,95,0.5)
 }
+
+
 .main-newstand-shopping-footer .text{
-  padding: 0 16px;
+  padding: 0 16px;;
+  min-width: 156px;
 }
-/* 이전 버튼 */
+/* 이전 , 다음 공통 스타일 */
 .main-newstand-shopping-footer .btn-prev,
 .main-newstand-shopping-footer .btn-next{
   width: 36px;
@@ -856,23 +860,26 @@ display: flex;
   border: 1px solid var(--color_button_border);
   background-color: #fff;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .main-newstand-shopping-footer .btn-prev::before,
 .main-newstand-shopping-footer .btn-next::before{
   content: '';
   display: block;
-  position: absolute;
   background: url(./img-sp.png);
   background-size: 422px 405px;
-  background-position: -412px 0px;
+  background-position: -410px -64px;
   background-repeat: no-repeat;
   width: 10px;
   height: 12px;
 
 }
-/* 다음 버튼 */
-.main-newstand-shopping-footer .btn-next{
-
+/* 이전 버튼 */
+.main-newstand-shopping-footer .btn-prev::before{
+  transform: rotate(180deg);
 }
 /* 맨 왼쪽 버튼들 */
 .main-newstand-shopping-footer .list,
@@ -882,20 +889,24 @@ display: flex;
   cursor: pointer;
   top: 0;
   background-color: transparent;
+  display: flex;
+  align-items: center;
   
 }
 /* 목록보기 버튼 */
 .main-newstand-shopping-footer .list{
   right: 50px;
-  padding: 18px 9px 18px 20px;
+  padding: 19px 9px 18px 20px;
+
 }
+
 .main-newstand-shopping-footer .list::before,
 .main-newstand-shopping-footer .grid::before{
   content: '';
   display: inline-block;
   background : url(./img-sp.png);
   background-size: 422px 406px;
-  background-position: -86px -368px;
+  background-position: -107px -368px;
   background-repeat: no-repeat;
   width: 21px;
   height: 20px;
@@ -907,7 +918,10 @@ display: flex;
 
 .main-newstand-shopping-footer .grid{
   right: 0;
-  padding: 18px 20px 18px 20px;
+  padding: 19px 20px 18px 9px;
+}
+.main-newstand-shopping-footer .list:hover::before{
+  background-position: -86px -368px;
 }
 
 /* 뉴스 스탠드 끝 */
