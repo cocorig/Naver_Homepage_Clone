@@ -490,8 +490,6 @@ aside[class$= ad] {
 
 .main-newstand{
   height: 426px;
-
- 
 }
 
 /* 로그인 폼 */
@@ -706,7 +704,6 @@ border-top: 1px solid var(--color_border_in);
 #main-newstand-shopping-gray{
   display: flex;
   justify-content: space-between;
-  align-items: center;
   font-size: 1.4rem;
   border-radius: 4px;
   height: 50px;
@@ -717,6 +714,7 @@ border-top: 1px solid var(--color_border_in);
 
 #main-newstand-shopping-gray .left{
   display: flex;
+
 }
 
 /* 전체 언론사 부분 */
@@ -731,18 +729,18 @@ border-top: 1px solid var(--color_border_in);
 }
 #main-newstand-animation {
   display: flex;
-  align-items: center;
 }
 
 /*  뉴스타이틀  */
-#main-newstand-animation a:first-of-type{
+#main-newstand-animation > a:first-of-type{
   padding-left: 20px;
   position: relative;
-
+  line-height: 26px;
+  top: -1px;
 }
 
 /* 뉴스타이틀 앞에 선 */
-#main-newstand-animation a:first-of-type::before{
+#main-newstand-animation > a:first-of-type::before{
   content: '';
   position: absolute;
   top: 5px;
@@ -752,18 +750,41 @@ border-top: 1px solid var(--color_border_in);
   background-color: var(--color_dot_divider);
 }
 
-/* 뉴스 한줄 말 줄임 */
-#main-newstand-animation .newstand-desc{
+#main-newstand-animation-target{
+  width: 400px;
   display: inline-block;
-  width: 430px;
+  overflow: hidden;
+
+}
+/* 뉴스 한줄 말 줄임 */
+#main-newstand-animation div .newstand-desc{
+  width: 400px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   padding-left: 11px;
   position: relative;
+  display: inline-block;
+  animation: newstand_title_slide forwards 3s cubic-bezier(.33,1,.68,1) infinite;
+  
+}
+
+@keyframes newstand_title_slide {
+  0% {
+    opacity: 0;
+    transform: translateY(-18px);
+}
+50% {
+  opacity: 1;
+  transform: translateY(0px);
+}
+100% {
+    opacity: 1;
+    transform: translateY(0);
+}
 }
 /*  뉴스타이틀 뒤에 점 */
-#main-newstand-animation .newstand-desc::before{
+#main-newstand-animation-target .newstand-desc::before{
   content : '';
   display: inline-block;
   width: 3px;
